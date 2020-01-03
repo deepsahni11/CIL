@@ -25,6 +25,37 @@ simplefilter(action='ignore', category=FutureWarning)
 from sklearn.neural_network import MLPClassifier
 
 
+samplers_all = [
+    # Oversampling methods:
+    RandomOverSampler(random_state=seed), 
+    SMOTE(random_state=seed),             
+    ADASYN(random_state=seed),            
+    BorderlineSMOTE(random_state=seed),
+    SVMSMOTE(random_state=seed),
+    
+    # Undersampling methods:
+    RandomUnderSampler(random_state=seed),
+    ClusterCentroids(random_state=seed),
+    NearMiss(version=1, random_state=seed),
+    NearMiss(version=2, random_state=seed),
+    NearMiss(version=3, random_state=seed),
+    TomekLinks(random_state=seed),
+    EditedNearestNeighbours(random_state=seed),
+    RepeatedEditedNearestNeighbours(random_state=seed),
+    AllKNN(random_state=seed),
+    CondensedNearestNeighbour(random_state=seed),
+    OneSidedSelection(random_state=seed),
+    NeighbourhoodCleaningRule(random_state=seed),
+    InstanceHardnessThreshold(random_state=seed),
+    
+    
+    # Combos:
+    SMOTEENN(random_state=seed),
+    SMOTETomek(random_state=seed)
+
+]
+samplers_array_all = np.array(samplers_all)
+
 #### Every dataset has been labelled using this sequence 
 #### (flip_fraction,num_informative,class_separation,num_clusters,random_seed,num_features,num_classes,
 ####  num_repeated,num_redundant)
