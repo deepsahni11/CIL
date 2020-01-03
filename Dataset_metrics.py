@@ -58,13 +58,7 @@ data = []
 data2 = []
 
 
-# print("\\documentclass[12pt]{article} \n" + 
-# "\\usepackage{longtable}\n"+
-# "\\begin{document}\n"+ 
-# "\\begin{center}\n" +
-#  "\\begin{longtable}{p{1cm} r *{"+str(len(methods))+"}{c}}\n"
-#   +"\\caption{CIL Benchmarking Simulation Results}\\label{tab:result} \\\\"
-#   +"\n\\toprule")
+
 
 
 
@@ -73,10 +67,6 @@ X_train_datasets = []
 # X_test_datasets = []
 # y_test_datasets = []
 
-# print("Dataset & Meas.", end="")
-# for method in methods:
-#     print(" & "+method, end="")
-# print("\\\\ \n\\midrule\n\\endhead")
 
 c = 0
 for f in flip_fraction:
@@ -100,13 +90,7 @@ for f in flip_fraction:
                     ytrain, ytest = y[train_index], y[test_index]
 
                      
-                    #'E:\Internships_19\Internship(Summer_19)\Imbalanced_class_classification\Class_Imabalanced_Learning_Code\CIL Code\RESULTS\Dataset_Metrics1_Dataset_11to20.csv'
-                    # Save 2D numpy array to csv file
-#                     np.savetxt('E:\Internships_19\Internship(Summer_19)\Imbalanced_class_classification\Class_Imabalanced_Learning_Code\CIL Code\Datasets_generated\X_train_Dataset_' + str(c) + str("_") + str(f) + str("_") + str(num_i) + str("_") + str(cs) + str("_") + str(num_c) + str("_") + str(random_seed) + str("_") + str(num_features) + str("_") + str(num_classes) + str("_") + str(num_repeated) + str("_") + str(num_redundant) + '.csv', Xtrain, delimiter=',', fmt='%f')
-#                     np.savetxt('E:\Internships_19\Internship(Summer_19)\Imbalanced_class_classification\Class_Imabalanced_Learning_Code\CIL Code\Datasets_generated\y_train_Dataset_' + str(c) + str("_") + str(f) + str("_") + str(num_i) + str("_") + str(cs) + str("_") + str(num_c) + str("_") + str(random_seed) + str("_") + str(num_features) + str("_") + str(num_classes) + str("_") + str(num_repeated) + str("_") + str(num_redundant) + '.csv', ytrain, delimiter=',', fmt='%f')
-#                     np.savetxt('E:\Internships_19\Internship(Summer_19)\Imbalanced_class_classification\Class_Imabalanced_Learning_Code\CIL Code\Datasets_generated\X_test_Dataset_' + str(c) + str("_") + str(f) + str("_") + str(num_i) + str("_") + str(cs) + str("_") + str(num_c) + str("_") + str(random_seed) + str("_") + str(num_features) + str("_") + str(num_classes) + str("_") + str(num_repeated) + str("_") + str(num_redundant) +  '.csv', Xtest, delimiter=',', fmt='%f')
-#                     np.savetxt('E:\Internships_19\Internship(Summer_19)\Imbalanced_class_classification\Class_Imabalanced_Learning_Code\CIL Code\Datasets_generated\y_test_Dataset_' + str(c) + str("_") + str(f) + str("_") + str(num_i) + str("_") + str(cs) + str("_") + str(num_c) + str("_") + str(random_seed) + str("_") + str(num_features) + str("_") + str(num_classes) + str("_") + str(num_repeated) + str("_") + str(num_redundant) +  '.csv', ytest, delimiter=',', fmt='%f')
-
+                    
                     X_train_datasets.append(Xtrain)
 #                     y_train_datasets.append(y_train)
 #                     X_test_datasets.append(X_test)
@@ -124,18 +108,10 @@ for f in flip_fraction:
 #                         ytest = y_test_datasets[j]
 
 
-                #     for m in range(len(measureIdx)): 
-                #         k = measureIdx[m]\
-#                     c = c+1
-#                     print("D-"+str(c), end="")
-                    #if m==0 else "",
-                    #     " & "+ measures[k], end="")
-
 #                     data.append(tuple(["Dataset-" + str(c),"","","","","","","","","","","","","","","","","","","",""]))
 #                     data2.append(tuple(["Dataset-" + str(c),"","","","","","","","","","","","","","","","","","","",""]))
 
-                #     "$P$", "$R$"
-
+              
 
                     row = ["$P$"]
 #                     print(" &","$P$", end="")
@@ -260,11 +236,6 @@ for f in flip_fraction:
             
             
             
-#                     if(c == 2):
-#                     break
-#                 break
-#             break
-#         break
 
 #                     print("\\\\")
 
@@ -275,6 +246,5 @@ for f in flip_fraction:
 # print("\\bottomrule\n\\end{longtable}"+"\\end{center} \n" +
 #       "\\end{document}")
 np.savetxt('E:\Internships_19\Internship(Summer_19)\Imbalanced_class_classification\Class_Imabalanced_Learning_Code\CIL Code\RESULTS\Dataset_metrics_162_datasets_nn6.csv', data, delimiter=',', fmt=['%s' , '%s' ,'%s' ,'%s' ,'%s' ,'%s' ,'%s' ,'%s' ,'%s' ,'%s','%s' , '%s' ,'%s' ,'%s' ,'%s' ,'%s' ,'%s' ,'%s' ,'%s' ,'%s','%s'  ], header = "Data,ROS,SMO,ADA,B-S,S-S,RUS,CC,NM1,NM2,NM3,Tomek,ENN,RENN,AkNN,CNN,OSS,NCR,IHT,SMOTE+ENN,SMOTE+Tomek",comments='')
-# np.savetxt('E:\Internships_19\Internship(Summer_19)\Imbalanced_class_classification\Class_Imabalanced_Learning_Code\CIL Code\RESULTS\Recall_162_datasets_no_sampling.csv', data2, delimiter=',', fmt=['%s' , '%s' ,'%s' ,'%s' ,'%s' ,'%s' ,'%s' ,'%s' ,'%s' ,'%s','%s' , '%s' ,'%s' ,'%s' ,'%s' ,'%s' ,'%s' ,'%s' ,'%s' ,'%s','%s'  ], header = "Metrics,ROS,SMO,ADA,B-S,S-S,RUS,CC,NM1,NM2,NM3,Tomek,ENN,RENN,AkNN,CNN,OSS,NCR,IHT,SMOTE+ENN,SMOTE+Tomek",comments='')
 
 
