@@ -1,9 +1,6 @@
 import numpy as np
-import h5py
-import pickle
 import sklearn
 import random 
-import pdb
 from sklearn.metrics import *
 from imblearn.over_sampling import *
 from imblearn.under_sampling import *
@@ -13,11 +10,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import StratifiedShuffleSplit
 from sklearn.datasets import make_classification
-from scipy import stats
-from tqdm import *
 import matplotlib.pyplot as plt
-import seaborn as sns; sns.set()
-import pandas as pd
 from imblearn.metrics import geometric_mean_score
 from numpy.random import permutation
 from sklearn.metrics import f1_score
@@ -25,9 +18,6 @@ from scipy import stats
 from sklearn.feature_selection import mutual_info_regression
 from sklearn.model_selection import StratifiedShuffleSplit
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
-
-
-
 # import warnings filter
 from warnings import simplefilter
 # ignore all future warnings
@@ -55,7 +45,7 @@ num_redundant = 0
 
 
 data = []
-data2 = []
+# data2 = []
 
 
 
@@ -68,7 +58,7 @@ X_train_datasets = []
 # y_test_datasets = []
 
 
-c = 0
+# c = 0
 for f in flip_fraction:
     for num_i in num_informative:
         for cs in class_separation:
