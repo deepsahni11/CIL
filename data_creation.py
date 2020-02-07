@@ -9,11 +9,6 @@ from imblearn.combine import *
 from imblearn.ensemble import *
 from sklearn.model_selection import StratifiedShuffleSplit
 from sklearn.datasets import make_classification
-import torch
-import torch.nn as nn
-from torch.autograd import Variable
-import torch.nn.functional as F
-import torch.utils.data as Data
 from sklearn.model_selection import StratifiedShuffleSplit
 from numpy import save
 from numpy import load
