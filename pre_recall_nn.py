@@ -11,7 +11,10 @@ from numpy import load
 
 
 # this is one way to define a network
-
+X_train_datasets_5d_resampled = load('../Data_metrics_8415_datasets_X_train.npy',X_train_datasets_5d_resampled)
+X_test_datasets_5d_resampled = load('../Data_metrics_8415_datasets_X_test.npy',X_test_datasets_5d_resampled)
+y_train_datasets_5d_resampled = load('../Data_metrics_8415_datasets_y_train.npy',y_train_datasets_5d_resampled)
+y_test_datasets_5d_resampled = load('../Data_metrics_8415_datasets_y_test.npy',y_test_datasets_5d_resampled)
     
 class Net(torch.nn.Module):
     def __init__(self, n_feature, n_hidden1,n_hidden2, n_output):
@@ -88,3 +91,7 @@ for i in range(2):
 
         pred_y = net.predict(Xtest) 
         prediction_y.append(pred_y.detach().numpy())
+        
+        
+save('..\Data_metrics_8415_datasets_y_prediction.npy',prediction_y)
+
